@@ -29,7 +29,11 @@
             return (float)self::SALARIO_BASE+(self::COMPLEMENTO*$numAnos);
         }
 
-
+        public function __toString()
+        {
+            return (string)parent::__toString()." / ".$this->anoAlta." / ".$this->calcularSueldo();       
+        }
+            
        
     }
 

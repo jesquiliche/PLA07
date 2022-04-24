@@ -13,8 +13,9 @@ try{
     print $empleado;
     print "\n";
     $empleadoFijo=new EmpleadoFijo("366566239","Anotonio Gonzalez",25,"Contabilidad",2015);
+    print "\nEmpleado fijo \n";
     print $empleadoFijo;
-    print "\n";
+    print "\nSalario \n";
     print $empleadoFijo->calcularSueldo();
     print "\n";
 }catch(Exception $e) {
