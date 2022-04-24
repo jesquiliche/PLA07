@@ -1,19 +1,48 @@
-<?php 
+<?php
+    namespace MisClases; 
     require_once "./clases/Empleado.php";
+    use \Datetime;
 
     final class EmpleadoTemporal extends Empleado {
-        public function __construct(string $nif,string $nombre,int  $edad,string $departamento) {
-            parent::__construct($nif,$nombre,$edad,$departamento);
+        const SALARIO=1349.27;
+        private DateTime $fechaAlta;
+        private DateTime $fechaBaja;
 
+        public function __construct(string $nif,string $nombre,
+        int $edad,string $departamento,
+        DateTime $fechaAlta,DateTime $fechaBaja) {
+
+            parent::__construct($nif,$nombre,$edad,$departamento);
+            $this->setFechaAlta($fechaAlta);
+            $this->setFechaBaja($fechaBaja);
             
         }
 
-        public function calcularSueldo(){
-
+        public function setFechaAlta(DateTime $fechaAlta){
+            $this->fechaAlta=$fechaAlta;
         }
 
+        public function setFechaBaja(DateTime $fechaBaja){
+            $this->fechaBaja=$fechaBaja;
+        }
 
-       
+        public function getFechaAlta():string {
+            return $this->fechaAlta->format("d-m-Y");
+        }
+
+        public function getFechaBaja():string{
+            return $this->fechaBaja->format("d-m-Y");
+        }
+
+        public function calcularSueldo():float
+        {
+            return self::SALARIO;
+        }
+
+        public function __toString()
+        {
+            return (string)parent::__toString()." / ".$this->getFechaAlta()." / ".$this->getFechaBaja();
+        }
     }
 
 ?>

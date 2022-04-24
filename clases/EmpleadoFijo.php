@@ -1,4 +1,6 @@
 <?php 
+    namespace MisClases; 
+
     require_once "./clases/Empleado.php";
 
     final class EmpleadoFijo extends Empleado {

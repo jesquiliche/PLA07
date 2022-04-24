@@ -1,5 +1,7 @@
 <?php 
 
+namespace MisClases; 
+
 abstract class Empleado 
 {
 
