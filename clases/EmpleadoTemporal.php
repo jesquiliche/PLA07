@@ -27,11 +27,11 @@
         }
 
         public function getFechaAlta():string {
-            return $this->fechaAlta->format("d-m-Y");
+            return $this->fechaAlta->format("d/m/Y");
         }
 
         public function getFechaBaja():string{
-            return $this->fechaBaja->format("d-m-Y");
+            return $this->fechaBaja->format("d/m/Y");
         }
 
         public function calcularSueldo():float

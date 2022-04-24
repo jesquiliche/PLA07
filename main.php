@@ -11,9 +11,13 @@ use MisClases\EmpleadoFijo;
 use MisClases\EmpleadoHoras;
 use \DateTime;
 
-//funcion polimorfica imprime cualquier tipo de empleado
-//mientras derive la clase Empleado. Notese el primer parámetro
-//de la función
+/*
+Implementación libre del patron de diseño Strategy
+
+Funcion polimorfica que imprime cualquier tipo de empleado
+mientras derive la clase Empleado. Notese el primer parámetro
+de la función. 
+*/
 function imprimirEmpleado(Empleado $empleado,string $titulo){
     print $titulo."\n";
     print $empleado;
@@ -24,7 +28,8 @@ function imprimirEmpleado(Empleado $empleado,string $titulo){
 
 try{
     
-    $empleado=new EmpleadoTemporal(
+    //Crear Instancis de empleado temporal
+    $empleadoTemporal=new EmpleadoTemporal(
         "123456789",
         "Jesús Gomez",
         30,"IT",
@@ -32,21 +37,27 @@ try{
         DateTime::createFromFormat('d-m-Y', '10-10-2022')
     );
     
-    imprimirEmpleado($empleado,"Empleado Temporal");
+    //Imprimir empleadoTemporal
+    imprimirEmpleado($empleadoTemporal,"Empleado Temporal");
     
+    //Creacción de instancia de empleadoFijo
     $empleadoFijo=new EmpleadoFijo(
         "366566239",
         "Antonio Gonzalez",
         25,"Contabilidad",
         2015);
     
+    //Imprimimos el empleadoFijo
     imprimirEmpleado($empleadoFijo,"Empleado Fijo");
 
+    //Crear instancia de empleadoHoras
     $empleadoHoras=new EmpleadoHoras(
         "366566239",
         "Dolores Martin",
         45,
         "Limpieza",250);
+        
+    //Imprimimos el empleadoHoras
     imprimirEmpleado($empleadoHoras,"Empleado Horas");
    
 }catch(Exception $e) {
