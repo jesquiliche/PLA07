@@ -1,5 +1,6 @@
 <?php 
     namespace MisClases; 
+    use \Exception;
 
     require_once "./clases/Empleado.php";
 
@@ -8,12 +9,17 @@
         const COMPLEMENTO=192.85;
         private int $anoAlta;
 
-        public function __construct(string $nif,
-            string $nombre,int $edad,
-            string $departamento,int $ano) {
-            
-                parent::__construct($nif,
-                $nombre,$edad,$departamento);
+        public function __construct(
+            string $nif,
+            string $nombre,
+            int $edad,
+            string $departamento,
+            int $ano) {
+                parent::__construct(
+                    $nif,
+                    $nombre,
+                    $edad,
+                    $departamento);
 
                 $this->setAnoAlta($ano);
         }
@@ -33,7 +39,7 @@
 
         public function __toString()
         {
-            return (string)parent::__toString()." / ".$this->anoAlta." / ".$this->calcularSueldo();       
+            return (string)parent::__toString()." / ".$this->getAnoAlta();       
         }
             
        

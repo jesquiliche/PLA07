@@ -21,7 +21,7 @@ de la función.
 function imprimirEmpleado(Empleado $empleado,string $titulo){
     print $titulo."\n";
     print $empleado;
-    print "\nSalario \n";
+    print "\nSalario: ";
     print $empleado->calcularSueldo();
     print "\n\n";
 }
@@ -30,11 +30,11 @@ try{
     
     //Crear Instancis de empleado temporal
     $empleadoTemporal=new EmpleadoTemporal(
-        "123456789",
+        "12345678B",
         "Jesús Gomez",
-        30,"IT",
-        DateTime::createFromFormat('d-m-Y', '10-12-2020'),
-        DateTime::createFromFormat('d-m-Y', '10-10-2022')
+        30,"Comercial",
+        DateTime::createFromFormat('d-m-Y', '30-09-2000'),
+        DateTime::createFromFormat('d-m-Y', '30-10-2014')
     );
     
     //Imprimir empleadoTemporal
@@ -44,8 +44,8 @@ try{
     $empleadoFijo=new EmpleadoFijo(
         "366566239",
         "Antonio Gonzalez",
-        25,"Contabilidad",
-        2015);
+        35,"Contabilidad",
+        2018);
     
     //Imprimimos el empleadoFijo
     imprimirEmpleado($empleadoFijo,"Empleado Fijo");
@@ -55,8 +55,8 @@ try{
         "366566239",
         "Dolores Martin",
         45,
-        "Limpieza",250);
-        
+        "Limpieza",300);
+
     //Imprimimos el empleadoHoras
     imprimirEmpleado($empleadoHoras,"Empleado Horas");
    

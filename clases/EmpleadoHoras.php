@@ -1,16 +1,25 @@
 <?php 
     namespace MisClases; 
 
+
     require_once "./clases/Empleado.php";
 
     final class EmpleadoHoras extends Empleado {
         const PRECIO_HORA=9.39;
         private int $horas;
 
-        public function __construct(string $nif,string $nombre,
-            int $edad,string $departamento,int $horas) {
+        public function __construct(
+            string $nif,
+            string $nombre,
+            int $edad,
+            string $departamento,
+            int $horas) {
             
-                parent::__construct($nif,$nombre,$edad,$departamento);
+                parent::__construct(
+                    $nif,
+                    $nombre,
+                    $edad,
+                    $departamento);
                 
                 $this->horas=$horas;
             

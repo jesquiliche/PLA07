@@ -1,6 +1,7 @@
 <?php 
 
 namespace MisClases; 
+use \Exception;
 
 abstract class Empleado 
 {
@@ -9,12 +10,15 @@ abstract class Empleado
     protected string $nombre;
     protected int $edad;
     protected string $departamento;
-    public function __construct(string $nif,string $nombre,int  $edad,string $departamento) {
-        $this->setNif($nif);
-        $this->setNombre($nombre);
-        $this->setEdad($edad);
-        $this->setDepartamento($departamento);
-
+    public function __construct(
+        string $nif,
+        string $nombre,
+        int  $edad,
+        string $departamento) {
+            $this->setNif($nif);
+            $this->setNombre($nombre);
+            $this->setEdad($edad);
+            $this->setDepartamento($departamento);
     }
     
     abstract public function calcularSueldo();
@@ -50,7 +54,7 @@ abstract class Empleado
     }
 
     public function getNif():string{
-      //  print $this->nif;
+    
         return (string)$this->nif;
     }
     public function getNombre():string{
@@ -67,7 +71,7 @@ abstract class Empleado
 
     public function __toString()
     {
-        return (string)"Datos / ".$this->getNif()." / ".$this->getNombre()." / ".$this->getEdad()." / ".$this->getDepartamento();
+        return (string)"Datos: / ".$this->getNif()." / ".$this->getNombre()." / ".$this->getEdad()." / ".$this->getDepartamento();
     }
 
     
